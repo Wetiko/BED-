@@ -226,3 +226,76 @@ Here are several variations of SELECT statements in MySQL:
     ```sql
     SELECT column1 FROM table_name WHERE column2 LIKE 'prefix%';
     ```
+
+
+# From Statement
+
+In MySQL, the FROM statement is used to specify the table or tables from which you want to retrieve data. While there is no explicit limit on the number of tables you can include in a FROM statement, it's important to consider the complexity and performance implications when joining multiple tables. Here is an example of the basic syntax for a FROM statement:
+
+```sql
+SELECT column1, column2, ...
+FROM table1
+```
+
+Here are some possible variations of the FROM statement in MySQL:
+
+1. FROM a Single Table:
+   ```sql
+   FROM table_name
+   ```
+
+2. FROM Multiple Tables (Joining):
+   ```sql
+   FROM table1
+   JOIN table2 ON table1.column = table2.column
+   ```
+
+3. FROM Multiple Tables (Inner Join):
+   ```sql
+   FROM table1
+   INNER JOIN table2 ON table1.column = table2.column
+   ```
+
+4. FROM Multiple Tables (Left Join):
+   ```sql
+   FROM table1
+   LEFT JOIN table2 ON table1.column = table2.column
+   ```
+
+5. FROM Multiple Tables (Right Join):
+   ```sql
+   FROM table1
+   RIGHT JOIN table2 ON table1.column = table2.column
+   ```
+
+6. FROM Multiple Tables (Full Join):
+   ```sql
+   FROM table1
+   FULL JOIN table2 ON table1.column = table2.column
+   ```
+
+7. FROM Subquery:
+   ```sql
+   FROM (SELECT column1, column2 FROM table_name) AS subquery
+   ```
+
+8. FROM Multiple Tables with Aliases:
+   ```sql
+   FROM table1 AS t1
+   JOIN table2 AS t2 ON t1.column = t2.column
+   ```
+
+9. FROM Multiple Tables with Different Join Types:
+   ```sql
+   FROM table1
+   INNER JOIN table2 ON table1.column = table2.column
+   LEFT JOIN table3 ON table1.column = table3.column
+   ```
+
+10. FROM Multiple Tables with Complex Join Conditions:
+    ```sql
+    FROM table1
+    JOIN table2 ON table1.column1 = table2.column1 AND table1.column2 > table2.column2
+    ```
+
+These variations demonstrate the different ways you can specify the tables and join conditions in the FROM statement to retrieve data from multiple tables in MySQL. Keep in mind that the specific tables and join conditions will depend on your database schema and requirements.

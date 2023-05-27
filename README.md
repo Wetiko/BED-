@@ -1,2 +1,2 @@
-# BED-
+# BEDnotes
 BED notes for mst

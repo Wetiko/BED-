@@ -36,8 +36,7 @@ app.post('/test', function (req, res) {
 })
 
 app.put("/test/:testID", function (req, res) {
-    let foodID = req.params.foodID;
-  
+    let ID = req.params.ID;
     let colum1 = req.body.colum1;
     let colum2 = req.body.colum2;
     let colum3 = req.body.colum3;

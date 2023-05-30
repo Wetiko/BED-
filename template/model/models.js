@@ -45,7 +45,33 @@ const testQueries = {
                 })
             }
         })
-    }
+    },
+    putSomething: function (ID, colum1, colum2, colum3, callback) {
+        var conn = db.getConnection();
+        conn.connect(function (err) {
+          if (err) {
+            console.log(err);
+            return callback(err, null);
+          } else {
+            console.log("no err");
+            let sql = `
+                    UPDATE foodmenu SET colum1 = ?, colum2 = ?, colum3 = ? WHERE id = ?;                `;
+            conn.query(
+              sql,
+              [colum1, colum2, colum3, foodID],
+              function (err, result) {
+                if (err) {
+                  console.log(err);
+                  return callback(err, null);
+                } else {
+                  returnValue = { "Affected Rows": result.affectedRows.toString() };
+                  return callback(null, returnValue);
+                }
+              }
+            );
+          }
+        });
+      },
 }
 
 module.exports = testQueries; // Change the name to match line 5.

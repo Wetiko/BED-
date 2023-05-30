@@ -35,4 +35,26 @@ app.post('/test', function (req, res) {
     })
 })
 
+app.put("/test/:testID", function (req, res) {
+    let foodID = req.params.foodID;
+  
+    let colum1 = req.body.colum1;
+    let colum2 = req.body.colum2;
+    let colum3 = req.body.colum3;
+  
+    FOOD.putSomething(
+      ID,
+      colum1,
+      colum2,
+      colum3,
+      function (err, result) {
+        if (err) {
+          res.status(500).send({ message: "Internal Server Error." });
+        } else {
+          res.status(200).send(result);
+        }
+      }
+    );
+  });
+
 module.exports = app;
